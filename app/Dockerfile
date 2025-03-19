@@ -1,5 +1,5 @@
 # Use an official Python runtime as base
-FROM python:3.9
+FROM python:3.8-slim
 
 # Set the working directory
 WORKDIR /app
@@ -8,6 +8,7 @@ WORKDIR /app
 COPY requirements.txt ./
 
 # Install dependencies
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the app
